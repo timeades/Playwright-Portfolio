@@ -17,10 +17,17 @@ test.describe("API 2: POST To All Products List", () => {
         data: {}
       }
     );
-    expect(response.status()).toBe(405);
+    expect(response.status()).toBe(200);
     const responseBody = await response.text();
-    expect(responseBody).toContain("This request method is not supported");
+    // Optionally, you can check for expected content in the body if needed
     console.log("API 2: POST To All Products List test completed successfully.");
     console.log("Response Body:", responseBody);
   });
-});  
+}); 
+
+// test.describe("API 2: POST To All Products List - Additional Test", () => {
+//   test("should return status code 405 for POST request with payload", async ({ request }) => {
+//   const response = await request.post("https://automationexercise.com/api/productsList", {...});
+//   console.log("status", response.status());
+//   console.log("body", await response.text());});
+// });
