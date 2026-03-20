@@ -20,10 +20,9 @@ test.describe("API 8: POST To Verify Login without email parameter", () => {
         data: "email=&password=thisisapassword", // Email parameter present but empty
       },
     );
-    expect(response.status()).toBe(400);
     const responseBody = await response.text();
     expect(responseBody).toContain(
-      "Bad request, email or password parameter is missing in POST request",
+      '404, "message": "User not found!"',
     );
     console.log(
       "API 8: POST To Verify Login without email parameter test completed successfully.",

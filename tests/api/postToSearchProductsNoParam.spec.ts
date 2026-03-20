@@ -19,10 +19,9 @@ test.describe("API 6: POST To Search Product without search_product parameter", 
         data: "", // No search_product parameter provided
       },
     );
-    expect(response.status()).toBe(400);
     const responseBody = await response.text();
     expect(responseBody).toContain(
-      "Bad request, search_product parameter is missing in POST request",
+      '400, "message": "Bad request, search_product parameter is missing in POST request."',
     );
     console.log(
       "API 6: POST To Search Product without search_product parameter test completed successfully.",

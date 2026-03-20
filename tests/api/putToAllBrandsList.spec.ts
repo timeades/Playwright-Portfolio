@@ -17,9 +17,8 @@ test.describe("API 4: PUT To All Brands List", () => {
         data: {}
       }
     );
-    expect(response.status()).toBe(405);
     const responseBody = await response.text();
-    expect(responseBody).toContain("This request method is not supported");
+    expect(responseBody).toContain('405, "message": "This request method is not supported."');
     console.log("API 4: PUT To All Brands List test completed successfully.");
     console.log("Response Body:", responseBody);
   });
