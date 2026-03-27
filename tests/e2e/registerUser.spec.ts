@@ -43,8 +43,8 @@ test("Register User", async ({ page }) => {
   });
 
   await test.step("Enter name and email address", async () => {
-    await page.fill('input[name="name"]', "Tim Eades");
-    await page.fill('input[data-qa="signup-email"]', "timeades@example.com");
+    await page.fill('input[name="name"]', "Tim J Eades");
+    await page.fill('input[data-qa="signup-email"]', "timjeades@example.com");
   });
 
   await test.step("Click 'Signup' button", async () => {
@@ -79,7 +79,7 @@ test("Register User", async ({ page }) => {
     await page.fill('input[name="company"]', "Test Company");
     await page.fill('input[name="address1"]', "123 Test Street");
     await page.fill('input[name="address2"]', "456");
-    await page.selectOption('select[name="country"]', "United Kingdom");
+    await page.selectOption('select[name="country"]', "India");
     await page.fill('input[name="state"]', "Greater London");
     await page.fill('input[name="city"]', "London");
     await page.fill('input[name="zipcode"]', "W14 8XX");
@@ -100,7 +100,7 @@ test("Register User", async ({ page }) => {
 
   await test.step("Verify that 'Logged in as username' is visible", async () => {
     await expect(
-      page.locator('a:has-text("Logged in as Test User")'),
+      page.locator('a:has-text("Logged in as Tim J Eade")'),
     ).toBeVisible();
   });
 
