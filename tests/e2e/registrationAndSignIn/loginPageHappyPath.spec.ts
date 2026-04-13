@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-  test('should display the login form', async ({page}) => {
+  test('User should be able to login', async ({page}) => {
     await page.goto('login');
     await expect(page.getByLabel('username')).toBeVisible();
     await page.getByLabel('username').fill('practice');
